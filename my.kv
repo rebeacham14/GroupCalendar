@@ -1,0 +1,43 @@
+<MyLayout>:
+
+    my_calendar: my_calendar
+    group_calendar_box: group_calendar_box
+    add_group_calendar_button: add_group_calendar_button
+
+    Button:
+        id: my_calendar
+        text: "My Calendar"
+        size_hint: {0.3, 0.25}
+        pos_hint: {"x":0.1 , "top": 0.625}
+
+        on_press: root.my_calendar_pressed()
+
+    ScrollView:
+        size_hint: {0.2, 0.5}
+        pos_hint: {"x":0.65 , "top": 0.8}
+
+
+        GridLayout:
+            id: group_calendar_box
+            rows: 10
+            spacing: 20
+            padding: 10
+            
+            #size_hint: {0.3, 0.5}
+            #pos_hint: {"x":0.8 , "top": 0.8}
+
+            Button: 
+                text: "Group Calendar 1"
+                size_hint: {0.2, 0.25}
+
+            Button: 
+                text: "Group Calendar 2"
+                size_hint: {0.2, 0.25}
+
+    Button: 
+        id: add_group_calendar_button
+        text: "+ New Group Calendar"
+        size_hint: {0.25, 0.10}
+        pos_hint: {"x":0.63 , "top": 0.25}
+                
+        on_press: root.add_group_calendar_pressed()
